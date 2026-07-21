@@ -1,0 +1,163 @@
+/* =============================================================
+   responsive.css — Дэлгэцийн хэмжээст тохируулга
+   Breakpoints: 1080 (нэвтрэх цэс), 900 (таблет), 620 (мобайл)
+   ============================================================= */
+
+/* ===== Том дэлгэц — жижиг тохируулга ====================== */
+@media (max-width: 1200px) {
+  .nav-link { padding-inline: .65rem; font-size: .88rem; }
+}
+
+/* ===== ТАБЛЕТ / БАГА ЛАПТОП — цэсийг мобайл болгох ======== */
+@media (max-width: 1080px) {
+  :root { --header-h: 70px; }
+
+  .nav-toggle { display: block; }
+
+  .nav-menu {
+    position: fixed;
+    top: 0; right: 0;
+    width: min(380px, 86vw);
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: calc(var(--header-h) + 1rem) 1.2rem 2rem;
+    box-shadow: -20px 0 60px rgba(8,23,47,.2);
+    transform: translateX(100%);
+    transition: transform .38s var(--ease);
+    overflow-y: auto;
+    z-index: 995;
+  }
+  .nav-menu.is-open { transform: translateX(0); }
+
+  .nav-item { border-bottom: 1px solid var(--line); }
+  .nav-link {
+    justify-content: space-between;
+    padding: 1rem .4rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .nav-link::after { display: none; }
+  .nav-link .caret { opacity: .8; }
+  .nav-item.is-expanded .nav-link .caret { transform: rotate(180deg); }
+
+  /* Dropdown / mega-г accordion болгох */
+  .dropdown, .mega {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-top: none;
+    border-radius: 0;
+    padding: 0 0 .8rem .4rem;
+    width: 100%;
+    display: none;
+    grid-template-columns: 1fr;
+    background: transparent;
+  }
+  .nav-item.is-expanded > .dropdown,
+  .nav-item.is-expanded > .mega { display: block; }
+  .nav-item:hover .dropdown,
+  .nav-item:hover .mega { opacity: 1; visibility: visible; } /* hover бус, expanded удирдана */
+  .mega { gap: 1rem; }
+  .mega__feature { display: none; }
+  .dropdown a, .mega__col a { padding: .55rem .4rem; font-weight: 600; }
+  .mega__col h5 { margin-top: .6rem; }
+
+  .utility-list { gap: 1rem; }
+  .utility-list li:first-child { display: none; } /* хаяг мобайл top-д нуух */
+}
+
+/* ===== ТАБЛЕТ layout ==================================== */
+@media (max-width: 980px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .mega { width: min(560px, 90vw); grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  :root { --space-7: 4.5rem; --space-6: 3.5rem; }
+  .split { grid-template-columns: 1fr; gap: 2.5rem; }
+  .split .split__media { order: -1; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-cta .container { flex-direction: column; align-items: flex-start; text-align: left; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== МОБАЙЛ ========================================== */
+@media (max-width: 620px) {
+  :root { --header-h: 64px; --utility-h: auto; }
+
+  .utility-bar { padding-block: .4rem; }
+  .utility-bar .container { justify-content: center; }
+  .utility-social { display: none; }
+
+  h1 { font-size: clamp(2.1rem, 8vw, 2.8rem); }
+  .section { padding-block: 3.2rem; }
+
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: 1fr; }
+  .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .stat:last-child { border-bottom: none; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom .container { flex-direction: column; text-align: center; }
+
+  .hero { min-height: auto; padding-block: 1rem; }
+  .hero__inner { padding-block: 3rem; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn { justify-content: center; }
+  .hero__stats { gap: 1.4rem 2rem; }
+
+  .btn { width: 100%; justify-content: center; }
+  .footer-cta .btn, .nav-actions .btn { width: auto; }
+
+  .pillar { grid-template-columns: 1fr; gap: .6rem; }
+  .step { grid-template-columns: 1fr; text-align: left; }
+  .event { grid-template-columns: 1fr; text-align: left; }
+  .event__date { justify-self: start; display: inline-flex; gap: .5rem; align-items: baseline; }
+
+  .lightbox__prev { left: .6rem; }
+  .lightbox__next { right: .6rem; }
+  .newsletter__form { flex-direction: column; }
+  .newsletter__form button { width: 100%; }
+}
+
+@media (max-width: 380px) {
+  .brand { gap: .55rem; }
+  .brand__sub { font-size: .52rem; letter-spacing: .06em; }
+  .brand__crest { width: 36px; height: 41px; }
+}
+
+@media (max-width: 330px) {
+  .brand__sub { font-size: .46rem; }
+  .brand__crest { width: 32px; height: 36px; }
+}
+
+/* ===== Хэвлэх ========================================== */
+@media print {
+  .site-header, .site-footer, .back-to-top, .page-loader,
+  .utility-bar, .footer-cta, .nav-toggle { display: none !important; }
+  body { color: #000; }
+  .section--navy, .page-hero, .hero { background: #fff !important; color: #000 !important; }
+}
+
+/* ===== Хөдөлгөөн багасгах хүсэлт ======================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
