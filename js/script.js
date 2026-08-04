@@ -189,7 +189,7 @@
             '<li>' + ICON.mail + '<a href="mailto:' + SCHOOL.email + '">' + SCHOOL.email + '</a></li>' +
           '</ul>' +
         '</div>' +
-        '<div class="footer-col"><h4>Хурдан холбоос</h4><ul class="footer-links">' + links(quick) + '</ul></div>' +
+        '<div class="footer-col"><h4>Холбоос</h4><ul class="footer-links">' + links(quick) + '</ul></div>' +
         '<div class="footer-col"><h4>Элсэлт</h4><ul class="footer-links">' + links(admis) + '</ul></div>' +
         '<div class="footer-col newsletter"><h4>Мэдээллийн товхимол</h4>' +
           '<p>Элсэлт, арга хэмжээний мэдээллийг цаг тухайд нь аваарай.</p>' +

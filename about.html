@@ -19,7 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Фонтыг render-blocking биш болгоно: сүлжээ удаан үед ч хуудас өөрийн CSS-ээрээ шууд зурагдана -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -29,7 +32,7 @@
 
   <div class="page-loader" aria-hidden="true">
     <div style="text-align:center">
-      <svg class="loader-crest" viewBox="0 0 60 68"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
+      <svg class="loader-crest" viewBox="0 0 60 68" width="86" height="96"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
       <div class="loader-bar"><span></span></div>
     </div>
   </div>
@@ -71,23 +74,23 @@
           <div class="reveal-right">
             <div class="timeline">
               <div class="timeline__item">
-                <div class="timeline__year">2013</div>
-                <p>Сургууль үүсгэн байгуулагдаж, анхны 6–7 дугаар ангийн 40 гаруй сурагчтайгаар үйл ажиллагаагаа эхэлсэн.</p>
+                <div class="timeline__year">2005</div>
+                <p>Ли Ши Яаны нэрэмжит Цэргийн Коллеж</p>
               </div>
               <div class="timeline__item">
-                <div class="timeline__year">2016</div>
-                <p>Одоогийн 20 га талбай бүхий кампус руу нүүж, дотуур байр, спорт цогцолборын анхны байгууламжийг ашиглалтад оруулсан.</p>
+                <div class="timeline__year">2010</div>
+                <p>Мэргэжлийн Сургалт Үйлдвэрлэлийн Политехник Коллеж</p>
               </div>
               <div class="timeline__item">
-                <div class="timeline__year">2019</div>
-                <p>Анхны төгсөгчид БНХАУ-ын бүрэн дунд боловсролын гэрчилгээгээ гардан авч, дотоод болон гадаадын их сургуульд амжилттай элссэн.</p>
+                <div class="timeline__year">2018</div>
+                <p>Хөххотын Ерөнхий Боловсролын Бүрэн Дунд Сургууль</p>
               </div>
               <div class="timeline__item">
-                <div class="timeline__year">2021</div>
-                <p>HSK албан ёсны шалгалтын төв статус авч, хятад хэлний гүнзгийрүүлсэн хөтөлбөрөө өргөжүүлсэн.</p>
+                <div class="timeline__year">2025</div>
+                <p>Эхлэн Хөххотын Олон Улсын Дунд Сургууль</p>
               </div>
               <div class="timeline__item">
-                <div class="timeline__year">2024</div>
+                <div class="timeline__year">2025</div>
                 <p>Сургуулийн эмнэлэг, шинэ лаборатори, өргөтгөсөн номын сангийн байрыг нээж, дэд бүтцээ бэхжүүлсэн.</p>
               </div>
               <div class="timeline__item">
@@ -179,11 +182,11 @@
           <p class="eyebrow">Багш нар</p>
           <h2>Олон улсын туршлагатай багшийн баг</h2>
         </div>
-        <div class="stat-strip reveal">
-          <div class="stat"><div class="stat__num"><span data-count="60">60</span>+</div><span class="stat__label">Бүрэн цагийн багш</span></div>
-          <div class="stat"><div class="stat__num">1:8</div><span class="stat__label">Багш, сурагчийн харьцаа</span></div>
+        <div class="stat-strip stat-strip--2 reveal">
+          <div class="stat"><div class="stat__num"><span data-count="60">60</span>+</div><span class="stat__label">Бүтэн цагийн багш</span></div>
+          <!-- <div class="stat"><div class="stat__num">1:8</div><span class="stat__label">Багш, сурагчийн харьцаа</span></div> -->
           <div class="stat"><div class="stat__num"><span data-count="65">65</span>%</div><span class="stat__label">Магистр ба түүнээс дээш зэрэгтэй</span></div>
-          <div class="stat"><div class="stat__num"><span data-count="6">6</span></div><span class="stat__label">Багш нарын харьяалагдах улс</span></div>
+          <!-- <div class="stat"><div class="stat__num"><span data-count="6">6</span></div><span class="stat__label">Багш нарын харьяалагдах улс</span></div> -->
         </div>
       </div>
     </section>
@@ -212,7 +215,7 @@
     </section>
 
     <!-- ============ CTA ============ -->
-    <section class="section section--navy" style="padding-block:var(--space-6)">
+    <!-- <section class="section section--navy" style="padding-block:var(--space-6)">
       <div class="container text-center reveal">
         <h2>Бидэнтэй хамт суралцахыг хүсэж байна уу?</h2>
         <p class="lead" style="color:#c5cfe0;max-width:560px;margin-inline:auto">2026–2027 оны хичээлийн жилийн элсэлт нээлттэй байна.</p>
@@ -221,7 +224,7 @@
           <a class="btn btn--on-navy" href="contact.html">Холбоо барих</a>
         </div>
       </div>
-    </section>
+    </section> -->
 
   </main>
 

@@ -19,7 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Фонтыг render-blocking биш болгоно: сүлжээ удаан үед ч хуудас өөрийн CSS-ээрээ шууд зурагдана -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -29,7 +32,7 @@
 
   <div class="page-loader" aria-hidden="true">
     <div style="text-align:center">
-      <svg class="loader-crest" viewBox="0 0 60 68"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
+      <svg class="loader-crest" viewBox="0 0 60 68" width="86" height="96"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
       <div class="loader-bar"><span></span></div>
     </div>
   </div>
@@ -171,9 +174,9 @@
           <h2>2026–2027 оны хичээлийн жилийн үндсэн огноо</h2>
         </div>
         <div class="grid grid-3 reveal">
-          <div class="event"><div class="event__date"><span class="d">25</span><span class="m">8-р сар</span></div><div><h4>Хичээлийн жил эхэлнэ</h4><p>Шинэ сурагчдын чиг баримжаа олгох өдөр багтана.</p></div></div>
+          <div class="event"><div class="event__date"><span class="d">1</span><span class="m">9-р сар</span></div><div><h4>Хичээлийн жил эхэлнэ</h4><p>Шинэ сурагчдын чиг баримжаа олгох өдөр багтана.</p></div></div>
           <div class="event"><div class="event__date"><span class="d">20</span><span class="m">1-р сар</span></div><div><h4>Намрын улирлын шалгалт</h4><p>Өвлийн амралтын өмнөх нэгдсэн дүгнэлт.</p></div></div>
-          <div class="event"><div class="event__date"><span class="d">10</span><span class="m">6-р сар</span></div><div><h4>Хичээлийн жил дуусна</h4><p>Төгсөлтийн ёслол, 12-р ангийн шалгалтын үр дүн зарлагдана.</p></div></div>
+          <div class="event"><div class="event__date"><span class="d">1</span><span class="m">7-р сар</span></div><div><h4>Хичээлийн жил дуусна</h4><p>Төгсөлтийн ёслол, 12-р ангийн шалгалтын үр дүн зарлагдана.</p></div></div>
         </div>
       </div>
     </section>

@@ -19,7 +19,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- Фонтыг render-blocking биш болгоно: сүлжээ удаан үед ч хуудас өөрийн CSS-ээрээ шууд зурагдана -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -29,7 +32,7 @@
 
   <div class="page-loader" aria-hidden="true">
     <div style="text-align:center">
-      <svg class="loader-crest" viewBox="0 0 60 68"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
+      <svg class="loader-crest" viewBox="0 0 60 68" width="86" height="96"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/></svg>
       <div class="loader-bar"><span></span></div>
     </div>
   </div>
@@ -84,7 +87,7 @@
               </li>
             </ul>
 
-            <p class="eyebrow">Кампус · Хөх хот</p>
+            <p class="eyebrow">Кампус · Хөх хот · Баяннуур хот</p>
             <ul class="footer-contact">
               <li>
                 <svg viewBox="0 0 24 24" fill="currentColor" style="color:var(--gold-600)"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
@@ -141,7 +144,7 @@
                     <span class="error-msg"></span>
                   </div>
                 </div>
-                <p class="form-note mt-3">Бид таны хүсэлтийг ажлын 1–2 хоногийн дотор хариу өгөхийг зорьдог.</p>
+                <p class="form-note mt-3">Бид таны хүсэлтийг ажлын 1–14 хоногийн дотор хариу өгөхийг зорьдог.</p>
                 <button type="submit" class="btn btn--primary mt-4 full-w">Илгээх</button>
                 <div class="form-status" role="status" aria-live="polite"></div>
               </form>

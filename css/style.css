@@ -799,6 +799,76 @@ strong { font-weight: 700; color: var(--navy-800); }
   box-shadow: var(--shadow-md);
 }
 
+/* Захирлын мэндчилгээ — карусель */
+.leaders__viewport {
+  display: grid;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+/* Бүх слайд нэг нүдэнд давхарлана — өндөр нь хамгийн өндөр слайдаар тогтоно */
+.leaders__slide {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity var(--tic) var(--ease), transform var(--tic) var(--ease), visibility var(--tic);
+  pointer-events: none;
+}
+.leaders__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+
+.leaders__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+}
+.leaders__dots { display: flex; gap: .6rem; }
+.leaders__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1.5px solid var(--gold-500);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--tic) var(--ease);
+}
+.leaders__dot:hover { background: var(--gold-300); }
+.leaders__dot.is-active {
+  background: var(--gold-500);
+  transform: scale(1.25);
+}
+
+.leaders__arrows { display: flex; gap: .6rem; }
+.leaders__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--navy-700);
+  cursor: pointer;
+  transition: all var(--tic) var(--ease);
+}
+.leaders__arrow svg { width: 24px; height: 24px; }
+.leaders__arrow:hover {
+  background: var(--navy-700);
+  border-color: var(--navy-700);
+  color: #fff;
+}
+
 /* Facility / list-with-check */
 .checklist li {
   position: relative;
@@ -821,6 +891,9 @@ strong { font-weight: 700; color: var(--navy-800); }
 
 /* ===== 12. STATISTICS ===================================== */
 .stat-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+/* Багана нь үзүүлэлтийн тоогоор — эс тэгвээс дутуу үед зүүн тийш шахагдана */
+.stat-strip--2 { grid-template-columns: repeat(2, 1fr); }
+.stat-strip--3 { grid-template-columns: repeat(3, 1fr); }
 .stat {
   text-align: center;
   padding: 2.4rem 1rem;
