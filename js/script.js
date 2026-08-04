@@ -134,11 +134,6 @@
           '<li>' + ICON.pin + '<span>' + SCHOOL.address + '</span></li>' +
           '<li>' + ICON.phone + '<a href="tel:77779701">' + SCHOOL.phone + '</a></li>' +
         '</ul>' +
-        '<div class="utility-social" aria-label="Сошиал холбоос">' +
-          '<a href="#" aria-label="Facebook">' + ICON.fb2 + '</a>' +
-          '<a href="#" aria-label="Instagram">' + ICON.ig + '</a>' +
-          '<a href="#" aria-label="YouTube">' + ICON.yt + '</a>' +
-        '</div>' +
       '</div></div>' +
       '<div class="container"><nav class="nav-bar" aria-label="Үндсэн цэс">' +
         '<a class="brand" href="index.html" aria-label="' + SCHOOL.name + ' — нүүр хуудас">' +
@@ -197,11 +192,6 @@
             '<input type="email" placeholder="Таны и-мэйл" aria-label="И-мэйл хаяг" required>' +
             '<button type="submit">Илгээх</button>' +
           '</form>' +
-          '<div class="footer-social" aria-label="Сошиал холбоос">' +
-            '<a href="#" aria-label="Facebook">' + ICON.fb2 + '</a>' +
-            '<a href="#" aria-label="Instagram">' + ICON.ig + '</a>' +
-            '<a href="#" aria-label="YouTube">' + ICON.yt + '</a>' +
-          '</div>' +
         '</div>' +
       '</div></div></div>' +
       '<div class="footer-bottom"><div class="container">' +
