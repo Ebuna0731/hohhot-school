@@ -15,15 +15,14 @@ HTML5 + CSS3 + Vanilla JavaScript. Framework ашиглаагүй.
 - `news.html` — Мэдээ ба арга хэмжээ (бэлэн)
 - `gallery.html` — Шүүлтүүр + lightbox бүхий зургийн цомог (бэлэн)
 - `faq.html` — Түгээмэл асуулт (accordion, бэлэн )
-- `contact.html` — Холбоо барих маягт (бэлэн )
+- `contact.html` — Холбоо барих мэдээлэл (бэлэн )
 - `404.html` — Алдааны хуудас (бэлэн )
 - `css/style.css` — Үндсэн загвар, дизайны систем (accordion, error-page бүрдэл нэмэгдсэн)
 - `css/responsive.css` — Бүх төхөөрөмжид тохирсон
 - `css/animations.css` — Хөдөлгөөн, scroll reveal
-- `js/script.js` — Дундын header/footer, цэс, loader, статистик, newsletter баталгаажуулалт
+- `js/script.js` — Дундын header/footer, цэс, loader, статистик
 - `js/animation.js` — Скролл илчлэлт
 - `js/gallery.js` — Цомгийн шүүлтүүр + lightbox
-- `js/contact.js` — Формын шалгалт
 - `images/` — Брэндийн өнгө (markland navy/gold)-нд тохирсон дэлгэрэнгүй зурган дүрслэлүүд (кампус, ангийн танхим, дотуур байр, лаборатори гэх мэт). Бодит гэрэл зурагтай болмогц мөн эдгээр файлын нэрээр (жишээ нь `images/gal-campus-1.svg`) солиход л хангалттай — HTML өөрчлөх шаардлагагүй.
 - `assets/` — Лого (crest), favicon
 - `robots.txt`, `sitemap.xml` — SEO

@@ -61,6 +61,7 @@
   /* Typography */
   --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --font-sans:  "PT Sans", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --font-mongol: "Noto Sans Mongolian", "Mongolian Baiti", "MN Baiti", "Menksoft Qagan", sans-serif;
 
   /* Type scale */
   --fs-xxl: clamp(2.6rem, 5vw, 4.4rem);
@@ -176,6 +177,14 @@ strong { font-weight: 700; color: var(--navy-800); }
 .text-gold { color: var(--gold-600); }
 .text-navy { color: var(--navy-700); }
 .serif { font-family: var(--font-serif); }
+
+/* Уламжлалт монгол бичиг — дээрээс доош, мөр нь зүүнээс баруун тийш */
+.mongol-script {
+  font-family: var(--font-mongol);
+  writing-mode: vertical-lr;
+  line-height: 1;
+  white-space: nowrap;
+}
 
 /* ===== 04. LAYOUT HELPERS ================================== */
 .container {
@@ -757,6 +766,11 @@ strong { font-weight: 700; color: var(--navy-800); }
   font-size: 2rem;
   position: relative;
 }
+.program__media .mongol-script {
+  font-size: 1.6rem;
+  max-inline-size: 130px;   /* босоо горимд inline тэнхлэг = өндөр */
+  overflow: hidden;
+}
 .program__media::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(8,23,47,.35));
@@ -982,61 +996,6 @@ table.data tbody tr:last-child td { border-bottom: none; }
 .step h3 { font-size: 1.2rem; margin-bottom: .3rem; }
 .step p { margin: 0; color: var(--ink-soft); font-size: var(--fs-sm); }
 
-/* ===== 14. FORMS ========================================= */
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
-.field { display: flex; flex-direction: column; gap: .45rem; }
-.field--full { grid-column: 1 / -1; }
-.field label {
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  color: var(--navy-800);
-}
-.field label .req { color: #c0392b; }
-.field input,
-.field select,
-.field textarea {
-  font-family: inherit;
-  font-size: var(--fs-base);
-  padding: .85rem 1rem;
-  border: 1.5px solid var(--line-strong);
-  border-radius: var(--radius);
-  background: #fff;
-  color: var(--ink);
-  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
-  width: 100%;
-}
-.field textarea { resize: vertical; min-height: 140px; }
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  outline: none;
-  border-color: var(--navy-600);
-  box-shadow: 0 0 0 3px rgba(27,69,133,.12);
-}
-.field .error-msg { color: #c0392b; font-size: var(--fs-xs); min-height: 1em; }
-.field.is-invalid input,
-.field.is-invalid select,
-.field.is-invalid textarea { border-color: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,.10); }
-
-.form-note {
-  background: var(--mist);
-  border-left: 3px solid var(--gold-500);
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius);
-  font-size: var(--fs-sm);
-  color: var(--ink-soft);
-}
-.form-status {
-  margin-top: 1rem;
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius);
-  font-size: var(--fs-sm);
-  font-weight: 700;
-  display: none;
-}
-.form-status.is-success { display: block; background: #e9f5ee; color: #1e7a47; border: 1px solid #bfe3cc; }
-.form-status.is-error   { display: block; background: #fdecea; color: #b23b2e; border: 1px solid #f4c4bd; }
-
 /* ===== 15. GALLERY ======================================= */
 .gallery-filter {
   display: flex;
@@ -1140,10 +1099,18 @@ table.data tbody tr:last-child td { border-bottom: none; }
 .news-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .news-card__media {
   height: 200px; position: relative;
+  overflow: hidden;
   display: grid; place-items: center;
   color: rgba(255,255,255,.9);
   font-family: var(--font-serif);
   font-size: 2.4rem;
+}
+/* Зураг хайрцгаасаа давж, доорх текст рүү дүрэлзэхээс сэргийлнэ */
+.news-card__media img {
+  position: absolute; inset: 0;
+  display: block;
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .news-card__cat {
   position: absolute; top: 1rem; left: 1rem;
@@ -1228,7 +1195,7 @@ table.data tbody tr:last-child td { border-bottom: none; }
 .footer-main { padding-block: var(--space-6) var(--space-4); }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  grid-template-columns: 1.6fr 1fr 1fr;
   gap: 2.4rem;
 }
 .footer-brand .brand__name { color: #fff; }
@@ -1254,29 +1221,6 @@ table.data tbody tr:last-child td { border-bottom: none; }
 .footer-links li { padding: .35rem 0; }
 .footer-links a { color: #9aa7bd; transition: color .2s var(--ease), padding-left .2s var(--ease); }
 .footer-links a:hover { color: #fff; padding-left: .3rem; }
-
-.newsletter p { color: #9aa7bd; margin-bottom: 1rem; }
-.newsletter__form { display: flex; gap: .5rem; }
-.newsletter__form input {
-  flex: 1;
-  padding: .75rem 1rem;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(255,255,255,.06);
-  color: #fff;
-  border-radius: var(--radius);
-  font-family: inherit;
-}
-.newsletter__form input::placeholder { color: #7e8aa1; }
-.newsletter__form input:focus { outline: none; border-color: var(--gold-400); }
-.newsletter__form button {
-  padding: .75rem 1.1rem;
-  background: var(--gold-500);
-  color: var(--navy-900);
-  border-radius: var(--radius);
-  font-weight: 700;
-  transition: background .25s var(--ease);
-}
-.newsletter__form button:hover { background: var(--gold-400); }
 
 .footer-social { display: flex; gap: .7rem; margin-top: 1.3rem; }
 .footer-social a {

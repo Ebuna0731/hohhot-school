@@ -21,9 +21,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Фонтыг render-blocking биш болгоно: сүлжээ удаан үед ч хуудас өөрийн CSS-ээрээ шууд зурагдана -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mongolian&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -34,7 +34,7 @@
     "@context": "https://schema.org",
     "@type": "School",
     "name": "Хөххотын Олон Улсын Дунд Сургууль",
-    "alternateName": "Hohhot International Middle School",
+    "alternateName": "International School of Hohhot",
     "url": "https://hohhot-school.mn/index.html",
     "logo": "https://hohhot-school.mn/assets/crest.svg",
     "telephone": "+976-7777-9701",
@@ -68,7 +68,7 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <img class="hero__scene" src="images/hero-campus.svg" alt="" aria-hidden="true" loading="eager">
+      <img class="hero__scene" src="images/hero-campus.jpg" alt="" aria-hidden="true" loading="eager" width="1280" height="853">
       <div class="hero__scrim"></div>
       <div class="hero__pattern"></div>
       <svg class="hero__crest" viewBox="0 0 60 68" aria-hidden="true"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="#fff"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#fff"/></svg>
@@ -210,7 +210,7 @@
             </div>
           </article>
           <article class="program reveal" data-delay="2">
-            <div class="program__media" style="background:linear-gradient(160deg,#1b4585,#08172f)"><span>ᠮᠣᠩᠭᠣᠯ</span></div>
+            <div class="program__media" style="background:linear-gradient(160deg,#1b4585,#08172f)"><span class="mongol-script" lang="mn-Mong">ᠮᠣᠩᠭᠣᠯ</span></div>
             <div class="program__body">
               <h3>Монгол хэлний хөтөлбөр</h3>
               <p>Эх хэл, үндэсний түүх, соёлыг гүнзгийрүүлж, монгол сурагчдын соёлын үндсийг бэхжүүлнэ.</p>
@@ -234,7 +234,7 @@
       <div class="container">
         <div class="split">
           <div class="split__media reveal-left hover-zoom" style="border-radius:8px;overflow:hidden;border:1px solid var(--line)">
-            <img src="images/about-campus.svg" alt="Сургуулийн кампусын ерөнхий байдал" width="900" height="640" loading="lazy">
+            <img src="images/about-campus.jpg" alt="Сургуулийн ногоон байгууламж, амралтын бүсээс харагдах хичээлийн байрууд" width="1280" height="853" loading="lazy">
           </div>
           <div class="reveal-right">
             <p class="eyebrow">Кампус ба байгууламж</p>
@@ -350,12 +350,12 @@
           <a class="link-arrow" href="gallery.html">Бүх зураг</a>
         </div>
         <div class="gallery-grid reveal">
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-campus-1.svg" alt="Кампусын гадна тал" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Кампус</span><div class="cap">Хичээлийн байр</div></div></div></a>
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-students-1.svg" alt="Сурагчид хамт олон" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Сурагчид</span><div class="cap">Хамт олон</div></div></div></a>
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-sport-1.svg" alt="Спортын тэмцээн" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Спорт</span><div class="cap">Сагсан бөмбөг</div></div></div></a>
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-library-1.svg" alt="Номын сан" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Номын сан</span><div class="cap">Уншлагын танхим</div></div></div></a>
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-activity-1.svg" alt="Соёлын арга хэмжээ" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Арга хэмжээ</span><div class="cap">Соёлын өдөрлөг</div></div></div></a>
-          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-grad-1.svg" alt="Төгсөлтийн ёслол" loading="lazy"><div class="gallery-item__overlay"><div><span class="tag">Төгсөлт</span><div class="cap">Төгсөгчид</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-campus-1.jpg" alt="Хичээлийн байрны гол үүд" loading="lazy" width="1280" height="853"><div class="gallery-item__overlay"><div><span class="tag">Кампус</span><div class="cap">Хичээлийн байр</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-students-1.jpg" alt="Сурагчид хичээлийн байр руу явж буй нь" loading="lazy" width="1280" height="853"><div class="gallery-item__overlay"><div><span class="tag">Сурагчид</span><div class="cap">Хамт олон</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-sport-1.jpg" alt="Сурагчид сагсан бөмбөгийн дасгал хийж байгаа нь" loading="lazy" width="1020" height="680"><div class="gallery-item__overlay"><div><span class="tag">Спорт</span><div class="cap">Сагсан бөмбөг</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-dining-1.jpg" alt="Сурагчдын хоолны газар" loading="lazy" width="1280" height="853"><div class="gallery-item__overlay"><div><span class="tag">Хоолны газар</span><div class="cap">Гуанз</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-dorm-1.jpg" alt="Дотуур байрны өрөө" loading="lazy" width="1280" height="853"><div class="gallery-item__overlay"><div><span class="tag">Дотуур байр</span><div class="cap">Сурагчийн өрөө</div></div></div></a>
+          <a class="gallery-item hover-zoom" href="gallery.html"><img src="images/gal-grad-1.jpg" alt="Төгсөлтийн ёслолын үеэр хурсан төгсөгчид" loading="lazy" width="1200" height="1200"><div class="gallery-item__overlay"><div><span class="tag">Төгсөлт</span><div class="cap">Төгсөгчид</div></div></div></a>
         </div>
       </div>
     </section>
@@ -379,7 +379,7 @@
             </div>
           </div>
           <div class="split__media reveal-right hover-zoom" style="border-radius:8px;overflow:hidden">
-            <img src="images/cta-students.svg" alt="Ирээдүйн суралcагчид" width="900" height="640" loading="lazy">
+            <img src="images/cta-students.jpg" alt="Сурагчдын амралтын мод бүхий алхах зам" width="1280" height="853" loading="lazy">
           </div>
         </div>
       </div>

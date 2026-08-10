@@ -64,7 +64,7 @@
 
     <section class="section">
       <div class="container">
-        <div class="split" style="grid-template-columns:.85fr 1.15fr;align-items:start">
+        <div class="split" style="grid-template-columns:1fr;align-items:start;max-width:760px">
 
           <div class="reveal-left">
             <p class="eyebrow">Элсэлтийн алба · Улаанбаатар</p>
@@ -106,51 +106,6 @@
             </div>
           </div>
 
-          <div class="reveal-right">
-            <div class="card">
-              <h2 style="font-size:1.5rem;margin-bottom:1.5rem">Хүсэлтийн маягт</h2>
-              <form id="contactForm" novalidate>
-                <div class="form-grid">
-                  <div class="field">
-                    <label for="name">Нэр <span class="req">*</span></label>
-                    <input type="text" id="name" name="name" autocomplete="name" required>
-                    <span class="error-msg"></span>
-                  </div>
-                  <div class="field">
-                    <label for="email">И-мэйл <span class="req">*</span></label>
-                    <input type="email" id="email" name="email" autocomplete="email" required>
-                    <span class="error-msg"></span>
-                  </div>
-                  <div class="field">
-                    <label for="phone">Утас</label>
-                    <input type="tel" id="phone" name="phone" autocomplete="tel">
-                    <span class="error-msg"></span>
-                  </div>
-                  <div class="field">
-                    <label for="subject">Сэдэв <span class="req">*</span></label>
-                    <select id="subject" name="subject" required>
-                      <option value="">Сонгоно уу</option>
-                      <option value="admissions">Элсэлт</option>
-                      <option value="tuition">Сургалтын төлбөр</option>
-                      <option value="academics">Хичээлийн хөтөлбөр</option>
-                      <option value="dorm">Дотуур байр</option>
-                      <option value="other">Бусад</option>
-                    </select>
-                    <span class="error-msg"></span>
-                  </div>
-                  <div class="field field--full">
-                    <label for="message">Мессеж <span class="req">*</span></label>
-                    <textarea id="message" name="message" required></textarea>
-                    <span class="error-msg"></span>
-                  </div>
-                </div>
-                <p class="form-note mt-3">Бид таны хүсэлтийг ажлын 1–14 хоногийн дотор хариу өгөхийг зорьдог.</p>
-                <button type="submit" class="btn btn--primary mt-4 full-w">Илгээх</button>
-                <div class="form-status" role="status" aria-live="polite"></div>
-              </form>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -165,6 +120,5 @@
 
   <script src="js/script.js"></script>
   <script src="js/animation.js"></script>
-  <script src="js/contact.js"></script>
 </body>
 </html>

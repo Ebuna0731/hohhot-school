@@ -92,7 +92,6 @@
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-cta .container { flex-direction: column; align-items: flex-start; text-align: left; }
-  .form-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== МОБАЙЛ ========================================== */
@@ -131,8 +130,6 @@
 
   .lightbox__prev { left: .6rem; }
   .lightbox__next { right: .6rem; }
-  .newsletter__form { flex-direction: column; }
-  .newsletter__form button { width: 100%; }
 }
 
 @media (max-width: 380px) {

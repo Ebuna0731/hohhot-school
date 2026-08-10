@@ -138,8 +138,8 @@
       '<div class="container"><nav class="nav-bar" aria-label="Үндсэн цэс">' +
         '<a class="brand" href="index.html" aria-label="' + SCHOOL.name + ' — нүүр хуудас">' +
           CREST +
-          '<span class="brand__text"><span class="brand__name">Хөххотын ОУ Сургууль</span>' +
-          '<span class="brand__sub">International Middle School</span></span>' +
+          '<span class="brand__text"><span class="brand__name">International School of Hohhot</span>' +
+          '<span class="brand__sub">Хөххотын Олон Улсын Сургууль</span></span>' +
         '</a>' +
         '<ul class="nav-menu">' + menu + '</ul>' +
         '<div class="nav-actions">' +
@@ -174,8 +174,8 @@
       '<div class="footer-main"><div class="container"><div class="footer-grid">' +
         '<div class="footer-brand">' +
           '<a class="brand" href="index.html">' + CREST +
-            '<span class="brand__text"><span class="brand__name">Хөххотын ОУ Сургууль</span>' +
-            '<span class="brand__sub">International Middle School</span></span></a>' +
+            '<span class="brand__text"><span class="brand__name">International School of Hohhot</span>' +
+            '<span class="brand__sub">Хөххотын Олон Улсын Сургууль</span></span></a>' +
           '<p class="footer-about">Монголын хөрөнгө оруулалттай, Хөх хот дахь олон улсын дунд сургууль. ' +
           'Сурагчдыг дэлхийн шилдэг их дээд сургуульд бэлтгэнэ.</p>' +
           '<ul class="footer-contact">' +
@@ -186,13 +186,6 @@
         '</div>' +
         '<div class="footer-col"><h4>Холбоос</h4><ul class="footer-links">' + links(quick) + '</ul></div>' +
         '<div class="footer-col"><h4>Элсэлт</h4><ul class="footer-links">' + links(admis) + '</ul></div>' +
-        '<div class="footer-col newsletter"><h4>Мэдээллийн товхимол</h4>' +
-          '<p>Элсэлт, арга хэмжээний мэдээллийг цаг тухайд нь аваарай.</p>' +
-          '<form class="newsletter__form" onsubmit="return false;">' +
-            '<input type="email" placeholder="Таны и-мэйл" aria-label="И-мэйл хаяг" required>' +
-            '<button type="submit">Илгээх</button>' +
-          '</form>' +
-        '</div>' +
       '</div></div></div>' +
       '<div class="footer-bottom"><div class="container">' +
         '<span>© ' + year + ' ' + SCHOOL.name + '. Бүх эрх хуулиар хамгаалагдсан.</span>' +
@@ -312,33 +305,6 @@
     if (btt) btt.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-
-    /* Мэдээллийн товхимол (footer newsletter) — симуляц баталгаажуулалт */
-    var newsletterForm = document.querySelector(".newsletter__form");
-    if (newsletterForm) {
-      newsletterForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var input = newsletterForm.querySelector('input[type="email"]');
-        var btn = newsletterForm.querySelector("button");
-        if (!input || !input.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) {
-          if (input) { input.style.borderColor = "#c0392b"; input.focus(); }
-          return;
-        }
-        var label = btn.textContent;
-        btn.disabled = true;
-        btn.textContent = "…";
-        setTimeout(function () {
-          input.value = "";
-          input.style.borderColor = "";
-          btn.disabled = false;
-          btn.textContent = "✓";
-          setTimeout(function () { btn.textContent = label; }, 2200);
-        }, 700);
-      });
-      newsletterForm.querySelector('input[type="email"]').addEventListener("input", function () {
-        this.style.borderColor = "";
-      });
-    }
 
     /* Page loader-ийг унтраах */
     var loader = document.querySelector(".page-loader");
