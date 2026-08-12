@@ -24,7 +24,7 @@
     align-items: stretch;
     gap: 0;
     padding: calc(var(--header-h) + 1rem) 1.2rem 2rem;
-    box-shadow: -20px 0 60px rgba(8,23,47,.2);
+    box-shadow: -20px 0 60px rgba(20,19,56,.2);
     transform: translateX(100%);
     transition: transform .38s var(--ease);
     overflow-y: auto;
@@ -68,8 +68,6 @@
   .dropdown a, .mega__col a { padding: .55rem .4rem; font-weight: 600; }
   .mega__col h5 { margin-top: .6rem; }
 
-  .utility-list { gap: 1rem; }
-  .utility-list li:first-child { display: none; } /* хаяг мобайл top-д нуух */
 }
 
 /* ===== ТАБЛЕТ layout ==================================== */
@@ -92,15 +90,15 @@
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-cta .container { flex-direction: column; align-items: flex-start; text-align: left; }
+
+  /* Нарийн дэлгэцэд page-hero-г нэг багана болгож, зургийн коллажийг нуана */
+  .page-hero .container { display: block; }
+  .page-hero__collage { display: none; }
 }
 
 /* ===== МОБАЙЛ ========================================== */
 @media (max-width: 620px) {
-  :root { --header-h: 64px; --utility-h: auto; }
-
-  .utility-bar { padding-block: .4rem; }
-  .utility-bar .container { justify-content: center; }
-  .utility-social { display: none; }
+  :root { --header-h: 64px; }
 
   h1 { font-size: clamp(2.1rem, 8vw, 2.8rem); }
   .section { padding-block: 3.2rem; }
@@ -119,6 +117,16 @@
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn { justify-content: center; }
   .hero__stats { gap: 1.4rem 2rem; }
+  /* Мөнгөн урамшуулал — дүн дээрээ, тайлбар доороо */
+  .reward { flex-direction: column; align-items: flex-start; text-align: left; }
+
+  /* Давхар диплом — хоёр карт дээр доор нь давхарлана */
+  .diploma-pair { flex-direction: column; align-items: center; }
+  .diploma { max-width: 100%; width: 100%; }
+
+  /* Жижиг дэлгэц дээр сумууд текстийг халхлахгүйн тулд жижигрэнэ */
+  .hero__arrow { width: 38px; height: 38px; }
+  .hero__arrow svg { width: 17px; height: 17px; }
 
   .btn { width: 100%; justify-content: center; }
   .footer-cta .btn, .nav-actions .btn { width: auto; }
@@ -135,18 +143,18 @@
 @media (max-width: 380px) {
   .brand { gap: .55rem; }
   .brand__sub { font-size: .52rem; letter-spacing: .06em; }
-  .brand__crest { width: 36px; height: 41px; }
+  .brand__crest { width: 38px; height: auto; }
 }
 
 @media (max-width: 330px) {
   .brand__sub { font-size: .46rem; }
-  .brand__crest { width: 32px; height: 36px; }
+  .brand__crest { width: 34px; height: auto; }
 }
 
 /* ===== Хэвлэх ========================================== */
 @media print {
   .site-header, .site-footer, .back-to-top, .page-loader,
-  .utility-bar, .footer-cta, .nav-toggle { display: none !important; }
+  .footer-cta, .nav-toggle { display: none !important; }
   body { color: #000; }
   .section--navy, .page-hero, .hero { background: #fff !important; color: #000 !important; }
 }

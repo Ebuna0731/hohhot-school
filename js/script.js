@@ -15,8 +15,24 @@
     name: "Хөххотын Олон Улсын Дунд Сургууль",
     short: "ХОУДС",
     phone: "7777-9701",
-    address: "СБД, 2-р хороо, Twin Tower 1, 4 давхар, 405 тоот",
-    email: "elselt@hohhot-school.mn"
+    email: "elselt@hohhot-school.mn",
+    /* Байршлууд — footer-т эндээс гарна. Нэг байршилд хэд хэдэн хаяг байж болно. */
+    locations: [
+      {
+        label: "Улаанбаатар",
+        lines: ["СБД, 2-р хороо, Twin Tower 1, 4 давхар, 405 тоот"]
+      },
+      {
+        label: "Баяннуурын кампус",
+        lines: ["БНХАУ, ӨМӨЗО, Баяннуур хот, Урадын Дунд хошуу, Ганцбулаг хойд зам, " +
+                "Үньин гудамжны уулзвараас баруун урд зүгт 280 метр"]
+      },
+      {
+        label: "Хөххотын кампус",
+        lines: ["БНХАУ, ӨМӨЗО, Хөххот, Шинчен дүүрэг, Хянган хойд замын 2212",
+                "БНХАУ, ӨМӨЗО, Хөххот, Шинчен дүүрэг, Хянган хойд замын 110"]
+      }
+    ]
   };
 
   /* Навигацийн бүтэц. type: link | dropdown | mega */
@@ -77,6 +93,7 @@
         { label: "Урлаг ба хөгжим", href: "student-life.html#arts" },
         { label: "Клубууд", href: "student-life.html#clubs" },
         { label: "Дотуур байр", href: "student-life.html#dorm" },
+        { label: "Хоол хүнс", href: "student-life.html#dining" },
         { label: "Сурагчийн дэмжлэг", href: "student-life.html#support" }
       ]
     },
@@ -99,7 +116,9 @@
     up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>'
   };
 
-  var CREST = '<svg class="brand__crest" viewBox="0 0 60 68" role="img" aria-label="Сургуулийн сүлд"><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="#123262"/><path d="M30 2 56 12v20c0 18-14 28-26 34C18 60 4 50 4 32V12z" fill="none" stroke="#b8902f" stroke-width="1.6"/><path d="M30 8 50 16v16c0 14-11 22-20 27C21 54 10 46 10 32V16z" fill="none" stroke="#cba94f" stroke-width="1" opacity=".7"/><path d="M18 40c6-3 10-8 12-16 2 8 6 13 12 16-5 1-9 4-12 9-3-5-7-8-12-9z" fill="#b8902f"/><circle cx="30" cy="26" r="3.2" fill="#cba94f"/></svg>';
+  /* Лого: цагаан дэвсгэр дээр өнгөт, хар хөх дэвсгэр дээр цагаан хувилбар */
+  var CREST = '<img class="brand__crest" src="assets/logo-bird.png" alt="Сургуулийн лого" width="360" height="365">';
+  var CREST_LIGHT = '<img class="brand__crest" src="assets/logo-bird-light.png" alt="Сургуулийн лого" width="360" height="365">';
 
   /* ---- 2. Header барих ------------------------------------- */
   function buildHeader(activeKey) {
@@ -129,12 +148,6 @@
     }).join("");
 
     return '' +
-      '<div class="utility-bar"><div class="container">' +
-        '<ul class="utility-list">' +
-          '<li>' + ICON.pin + '<span>' + SCHOOL.address + '</span></li>' +
-          '<li>' + ICON.phone + '<a href="tel:77779701">' + SCHOOL.phone + '</a></li>' +
-        '</ul>' +
-      '</div></div>' +
       '<div class="container"><nav class="nav-bar" aria-label="Үндсэн цэс">' +
         '<a class="brand" href="index.html" aria-label="' + SCHOOL.name + ' — нүүр хуудас">' +
           CREST +
@@ -173,13 +186,18 @@
       '</div></div>' +
       '<div class="footer-main"><div class="container"><div class="footer-grid">' +
         '<div class="footer-brand">' +
-          '<a class="brand" href="index.html">' + CREST +
+          '<a class="brand" href="index.html">' + CREST_LIGHT +
             '<span class="brand__text"><span class="brand__name">International School of Hohhot</span>' +
             '<span class="brand__sub">Хөххотын Олон Улсын Сургууль</span></span></a>' +
-          '<p class="footer-about">Монголын хөрөнгө оруулалттай, Хөх хот дахь олон улсын дунд сургууль. ' +
-          'Сурагчдыг дэлхийн шилдэг их дээд сургуульд бэлтгэнэ.</p>' +
+          '<p class="footer-about">Хятад–Монголын хамтарсан хөрөнгө оруулалттай, Хөххот болон Баяннуур хотод байрлах ' +
+          'олон улсын дунд сургууль. Төгсөгчид хоёр улсын бүрэн дунд боловсролын гэрчилгээг хослон эзэмшинэ.</p>' +
           '<ul class="footer-contact">' +
-            '<li>' + ICON.pin + '<span>' + SCHOOL.address + '</span></li>' +
+            SCHOOL.locations.map(function (loc) {
+              return '<li>' + ICON.pin + '<span>' +
+                '<strong class="footer-loc">' + loc.label + '</strong>' +
+                loc.lines.map(function (l) { return '<span class="footer-addr">' + l + '</span>'; }).join("") +
+                '</span></li>';
+            }).join("") +
             '<li>' + ICON.phone + '<a href="tel:77779701">' + SCHOOL.phone + '</a></li>' +
             '<li>' + ICON.mail + '<a href="mailto:' + SCHOOL.email + '">' + SCHOOL.email + '</a></li>' +
           '</ul>' +
@@ -189,7 +207,6 @@
       '</div></div></div>' +
       '<div class="footer-bottom"><div class="container">' +
         '<span>© ' + year + ' ' + SCHOOL.name + '. Бүх эрх хуулиар хамгаалагдсан.</span>' +
-        '<nav aria-label="Хууль эрх зүй"><a href="#">Нууцлалын бодлого</a><a href="#">Үйлчилгээний нөхцөл</a></nav>' +
       '</div></div>';
   }
 
@@ -273,7 +290,14 @@
       }, { threshold: 0.4 });
       counters.forEach(function (c) { io.observe(c); });
     } else {
-      counters.forEach(function (c) { c.textContent = c.getAttribute("data-count"); });
+      counters.forEach(function (c) { c.textContent = group(c.getAttribute("data-count")); });
+    }
+
+    /* Мянгатыг таслалаар тусгаарлана: 3500 -> 3,500 */
+    function group(n) {
+      var parts = n.split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
     }
 
     function animateCount(el) {
@@ -283,9 +307,9 @@
       function tick(now) {
         var p = Math.min((now - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = (target * eased).toFixed(dec);
+        el.textContent = group((target * eased).toFixed(dec));
         if (p < 1) requestAnimationFrame(tick);
-        else el.textContent = target.toFixed(dec);
+        else el.textContent = group(target.toFixed(dec));
       }
       requestAnimationFrame(tick);
     }
