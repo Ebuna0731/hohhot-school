@@ -60,9 +60,14 @@
     background: transparent;
   }
   .nav-item.is-expanded > .dropdown,
-  .nav-item.is-expanded > .mega { display: block; }
+  .nav-item.is-expanded > .mega { display: block; transform: none; }
+  /* Гар утсан дээр товшиход :hover наалддаг тул компьютерийн дүрэм ажиллаж,
+     цэсийг translateX(-50%)-аар зүүн тийш түлхэж алга болгодог байсан.
+     Энд байрлалын бүх шилжилтийг тэглэнэ. */
   .nav-item:hover .dropdown,
-  .nav-item:hover .mega { opacity: 1; visibility: visible; } /* hover бус, expanded удирдана */
+  .nav-item:hover .mega,
+  .nav-item:focus-within .dropdown,
+  .nav-item:focus-within .mega { opacity: 1; visibility: visible; transform: none; }
   .mega { gap: 1rem; }
   .mega__feature { display: none; }
   .dropdown a, .mega__col a { padding: .55rem .4rem; font-weight: 600; }

@@ -1022,18 +1022,22 @@ strong { font-weight: 700; color: var(--navy-800); }
 
 .diploma-result-label {
   text-align: center;
-  margin: clamp(2rem, 4vw, 2.8rem) 0 1rem;
+  margin: clamp(2.2rem, 4vw, 3rem) 0 1rem;
   letter-spacing: .14em;
   text-transform: uppercase;
   font-size: var(--fs-xs);
   font-weight: 700;
   color: #8fa0bd;
 }
+/* Гарчиг байвал дээд зайг тэр барина, байхгүй бол товчнууд өөрсдөө */
+.diploma-result-label + .diploma-result { margin-top: 0; }
 .diploma-result {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: .8rem;
+  /* Дээрх картуудаас салгах зай — өмнө нь энэ зайг устгасан гарчиг барьдаг байсан */
+  margin-top: clamp(2.2rem, 4vw, 3rem);
 }
 .diploma-result span {
   padding: .62rem 1.3rem;
