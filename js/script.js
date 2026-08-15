@@ -152,7 +152,7 @@
         '<a class="brand" href="index.html" aria-label="' + SCHOOL.name + ' — нүүр хуудас">' +
           CREST +
           '<span class="brand__text"><span class="brand__name">International School of Hohhot</span>' +
-          '<span class="brand__sub">Хөххотын Олон Улсын Сургууль</span></span>' +
+          '<span class="brand__sub">Хөххотын Олон Улсын Дунд Сургууль</span></span>' +
         '</a>' +
         '<ul class="nav-menu">' + menu + '</ul>' +
         '<div class="nav-actions">' +
@@ -188,7 +188,7 @@
         '<div class="footer-brand">' +
           '<a class="brand" href="index.html">' + CREST_LIGHT +
             '<span class="brand__text"><span class="brand__name">International School of Hohhot</span>' +
-            '<span class="brand__sub">Хөххотын Олон Улсын Сургууль</span></span></a>' +
+            '<span class="brand__sub">Хөххотын Олон Улсын Дунд Сургууль</span></span></a>' +
           '<p class="footer-about">Хятад–Монголын хамтарсан хөрөнгө оруулалттай, Хөххот болон Баяннуур хотод байрлах ' +
           'олон улсын дунд сургууль. Төгсөгчид хоёр улсын бүрэн дунд боловсролын гэрчилгээг хослон эзэмшинэ.</p>' +
           '<ul class="footer-contact">' +

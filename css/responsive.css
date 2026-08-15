@@ -147,12 +147,12 @@
 
 @media (max-width: 380px) {
   .brand { gap: .55rem; }
-  .brand__sub { font-size: .52rem; letter-spacing: .06em; }
+  .brand__sub { font-size: .6rem; letter-spacing: .02em; }
   .brand__crest { width: 38px; height: auto; }
 }
 
 @media (max-width: 330px) {
-  .brand__sub { font-size: .46rem; }
+  .brand__sub { font-size: .54rem; }
   .brand__crest { width: 34px; height: auto; }
 }
 
