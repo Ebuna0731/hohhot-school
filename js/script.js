@@ -83,6 +83,7 @@
         { label: "Хугацаа", href: "admissions.html#timeline" },
         { label: "Сургалтын төлбөр", href: "admissions.html#tuition" },
         { label: "Тэтгэлэг", href: "admissions.html#scholarships" },
+        { label: "X1 сургалтын виз", href: "admissions.html#visa" },
         { label: "Материал татах", href: "admissions.html#forms" }
       ]
     },
@@ -172,7 +173,8 @@
     var admis = [
       ["Элсэлтийн үйл явц", "admissions.html#process"], ["Тавигдах шаардлага", "admissions.html#requirements"],
       ["Сургалтын төлбөр", "admissions.html#tuition"], ["Тэтгэлэг", "admissions.html#scholarships"],
-      ["Материал татах", "admissions.html#forms"], ["Түгээмэл асуулт", "faq.html"]
+      ["X1 сургалтын виз", "admissions.html#visa"], ["Материал татах", "admissions.html#forms"],
+      ["Түгээмэл асуулт", "faq.html"]
     ];
     function links(arr) {
       return arr.map(function (a) { return '<li><a href="' + a[1] + '">' + a[0] + '</a></li>'; }).join("");

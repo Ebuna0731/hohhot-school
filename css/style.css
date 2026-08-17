@@ -1194,6 +1194,11 @@ table.data tbody tr:last-child td { border-bottom: none; }
 }
 .step h3 { font-size: 1.2rem; margin-bottom: .3rem; }
 .step p { margin: 0; color: var(--ink-soft); font-size: var(--fs-sm); }
+.step p + p { margin-top: .7rem; }
+.step__sub {
+  padding-left: .9rem;
+  border-left: 2px solid var(--gold-300);
+}
 
 /* ===== 15. GALLERY ======================================= */
 .gallery-filter {
