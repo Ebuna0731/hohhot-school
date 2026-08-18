@@ -797,6 +797,39 @@ strong { font-weight: 700; color: var(--navy-800); }
 .card h3 { font-size: 1.4rem; margin-bottom: .55rem; }
 .card p { color: var(--ink-soft); font-size: var(--fs-sm); }
 
+/* ----- Удирдлагын танилцуулга ------------------------------ */
+.leader-card { padding: 1.4rem; text-align: left; }
+.leader-card h3 { font-size: 1.2rem; margin-bottom: .7rem; color: var(--navy-800); }
+.leader-card__latin { font-weight: 400; color: var(--ink-faint); font-size: .85em; }
+.leader-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.2;
+  color: var(--navy-800);
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gold-300);
+}
+.leader-roles--lg { gap: .6rem; }
+.leader-roles--lg li { font-size: clamp(.95rem, 1.3vw, 1.08rem); padding-left: 1.15rem; }
+.leader-roles--lg li::before { width: 6px; height: 6px; background: var(--gold-500); }
+.leader-roles { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.leader-roles li {
+  position: relative;
+  padding-left: .95rem;
+  color: var(--ink-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+.leader-roles li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .6em;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold-400);
+}
+
 /* Numbered pillar (the four "Яагаад биднийг" reasons) */
 .pillar {
   display: grid;
@@ -886,7 +919,15 @@ strong { font-weight: 700; color: var(--navy-800); }
   box-shadow: var(--shadow-md);
 }
 
-/* Захирлын мэндчилгээ — карусель */
+/* Сургуулийн удирдлагууд — карусель */
+.leaders__head { margin-bottom: clamp(1.4rem, 3vw, 2.2rem); }
+.leaders__head .rule-gold { margin-bottom: 1.1rem; }
+.leaders__title {
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  line-height: 1.14;
+  margin: 0;
+}
+
 .leaders__viewport {
   display: grid;
   margin-top: clamp(1.6rem, 3vw, 2.4rem);
